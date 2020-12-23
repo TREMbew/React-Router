@@ -1,10 +1,10 @@
-import './App.css';
+//import './App.css';
 import {Data} from './data';
 import {MovieList} from './Component/MovieList';
 import {FilterV2} from './Component/FilterV2';
 import {useState} from 'react';
 
-function App() {
+function App(props) {
   const [anime, setAnime] = useState(Data);
   const [rateValue, setRateValue] = useState(5);
   const [inputFilter, setInputFilter] = useState('');
@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <FilterV2 ratevalue={rateValue} setratevalue={setRateValue} searching={filterHandler}/>
-      <MovieList animelist={anime.filter(el => el.rate <= rateValue && el.title.toLocaleLowerCase().includes(inputFilter.toLocaleLowerCase()))} setanime={setAnime} />
+      <MovieList animelist={anime.filter(el => el.rate <= rateValue && el.title.toLocaleLowerCase().includes(inputFilter.toLocaleLowerCase()))} setanime={setAnime} props={props}/>
     </div>
   );
 }
