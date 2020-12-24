@@ -9,12 +9,13 @@ export const AddMovie = (props) => {
     const [modalInputPoster, setModalInputPoster] = useState('');
     const [modalInputRating, setModalInputRating] = useState('');
     const [modalInputDescription, setModalInputDescription] = useState('');
+    const [modalInputTrailer, setModalInputTrailer] = useState('');
     //Modal Show On/Off
     const showModal = () => {
         setIsModalVisible(true);
     };
     const handleOk = () => {
-        props.onOk({title : modalInputTitle,posterUrl : modalInputPoster,rate : modalInputRating, description : modalInputDescription});
+        props.onOk({title : modalInputTitle,posterUrl : modalInputPoster,rate : modalInputRating, description : modalInputDescription, trailer : modalInputTrailer});
         setIsModalVisible(false);
     };
     const handleCancel = () => {
@@ -34,10 +35,13 @@ export const AddMovie = (props) => {
     const modalDescriptionHandler = e => {
         setModalInputDescription(e.target.value)
     }
+    const modalTrailerHandler = e => {
+        setModalInputTrailer(e.target.value)
+    }
 
     return (
     <>
-        <Button type="danger" onClick={showModal} shape="circle">
+        <Button type="danger" onClick={showModal} shape="circle" size='large' style={{marginTop: 25}}>
             <p className='addBtn'>+</p>
         </Button>
         <Modal title="Add Anime" visible={isModalVisible} onOk={handleOk} onCancel={handleCancel} className='pop-up-modal'>
@@ -55,6 +59,14 @@ export const AddMovie = (props) => {
                 placeholder="add a valid url link..."
                 value={modalInputPoster}
                 onChange={modalPosterHandler}>
+            </input>
+            <br></br>
+            <label>Anime Trailer :</label>
+            <br></br>
+            <input type='text' 
+                placeholder="add a valid emeded link..."
+                value={modalInputTrailer}
+                onChange={modalTrailerHandler}>
             </input>
             <br></br>
             <label>Anime Rating :</label>

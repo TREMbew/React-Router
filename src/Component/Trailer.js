@@ -1,11 +1,8 @@
-import React from 'react';
 import {Link} from 'react-router-dom';
-import {Data} from '../data';
+import { Button } from 'antd';
 
-const Trailer = ({data}) => {
-    console.log(data);
-    let anime = Data.find(el => el.title === data.match.params.id);
-    console.log(anime);
+const Trailer = ({animelist,match}) => {
+    let anime = animelist.find(el => el.title === match.params.id);
     let descriptionData;
     let trailerData;
     if(anime)
@@ -14,14 +11,13 @@ const Trailer = ({data}) => {
     return (
         <div className='anime-page' style={{textAlign:'center'}}>
             <Link to='/'>
-            <button style={{width:200, height:50}}>Go To Home</button>
+                <Button style={{marginBottom:20,width:200, height:50, color:'black', fontSize: 16, fontWeight:'600'}}>Close Trailer Page</Button>
             </Link>
-            <div className='anime-trailer'>
-                <div style={{color:'white', fontSize:20, fontWeight:'600', borderRadius:'4px solid black'}}>
-                    {descriptionData}
-                    <br></br>
-                    {trailerData}
-                </div>
+            <div style={{color:'white', fontSize:20, fontWeight:'600', borderRadius:'4px solid black'}}>
+                <h1>Description :</h1>
+                {descriptionData}
+                <br></br>
+                {trailerData}
             </div>
         </div>
     )

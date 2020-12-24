@@ -7,7 +7,7 @@ import { Link} from 'react-router-dom';
 export const MovieCard = ({item}) => {
     return (
         <>
-        <Link to={`/${item.title}`}>
+        <Link to={`/anime/${item.title}`}>
             <div className='anime'>
                 <img src={item.posterUrl} alt={item.title}></img>
                 <div className='anime-info'>

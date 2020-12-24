@@ -52,7 +52,7 @@
 .header{
   background-color: #11121688;
   padding: 1rem;
-  margin-bottom: 1rem;
+  /*margin-bottom: 1rem;*/
 }
 .header input{
   width: 180px;
@@ -63,7 +63,7 @@
 
 /************* ADD+MODAL ****************/
 .addBtn{
-  color: rgba(0, 0, 0, 0.95);
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 14px;
 }
@@ -85,10 +85,7 @@
 }
 /*********** Tailer **************/
 .anime-page{
-  margin-top: 20px;
-}
-.anime-trailer{
+  margin-bottom: 20px;
   background-color: #11121688;
   padding: 20px 0;
-  margin-top: 30px;
 }

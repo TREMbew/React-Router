@@ -1,11 +1,10 @@
 import {MovieCard} from './MovieCard';
 import {AddMovie} from './AddMovie';
 
-export const MovieList = ({animelist, setanime, props}) => {
+export const MovieList = ({animelist, setanime}) => {
     const handleOk = (addTerm) => {
         setanime([...animelist, addTerm]);
     };
-    console.log(props);
     return (
         <div>
             <AddMovie onOk={handleOk}/>
